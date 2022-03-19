@@ -5,7 +5,7 @@ export default async function changeStateDB(app,state,varState,mongoConnector){
             let resp = await collection.updateOne({app:app},{$set:{state:state}})
         }
         if(varState){
-            let resp = await collection.updateOne({app:app},{$set:{varState:varState}})
+            let resp = await collection.updateOne({app:app},{$set:{varState:parseInt(varState)}})
         }
         return true
     } catch(error) {
